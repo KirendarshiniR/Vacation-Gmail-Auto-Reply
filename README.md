@@ -32,7 +32,7 @@ Description
 
 First Thing to do go to Google Cloud Console and set up the OAuth 2.0 authentication for
 your application, follow these steps:
-@@ -34,7 +31,7 @@ your application, follow these steps:
+
 6. In the "Authorized redirect URIs" field, enter the redirect URI where you want to receive the authorization
    code. For this code, you can use "https://developers.google.com/oauthplayground".
 8. Click on the "Create" button to create the OAuth client ID. You will see a modal displaying the client ID
@@ -41,7 +41,6 @@ your application, follow these steps:
 9. Now, open the OAuth 2.0 Playground (https://developers.google.com/oauthplayground).
 10.In the OAuth 2.0 Playground, click on the settings icon (gear icon) on the top right corner. In the
    "OAuth 2.0 configuration" section, enter the client ID and client secret obtained in the previous step.
-@@ -53,7 +50,7 @@ your application, follow these steps:
    Replace REDIRECT_URI with the redirect URI value.
    Replace REFRESH_TOKEN with the refresh token value.
 17.Save the credentials.js file.
