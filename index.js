@@ -2,12 +2,14 @@
   const { google } = require("googleapis");
 
   
-  const {
-    CLIENT_ID,
-    CLEINT_SECRET,
-    REDIRECT_URI,
-    REFRESH_TOKEN,
-  } = require("./credentials");
+  const credentials = require("./credentials");
+
+const {
+  CLIENT_ID,
+  CLEINT_SECRET,
+  REDIRECT_URI,
+  REFRESH_TOKEN,
+} = credentials;
   
   
   const oAuth2Client = new google.auth.OAuth2(
@@ -104,7 +106,7 @@
   
   //this function is basically converte string to base64EncodedEmail format
   async function createReplyRaw(from, to, subject) {
-    const emailContent = `From: ${from}\nTo: ${to}\nSubject: ${subject}\n\nThank you for your message. i am  unavailable right now, but will respond as soon as possible...`;
+    const emailContent = `From: ${from}\nTo: ${to}\nSubject: ${subject}\n\nThank you for reaching out. I'm currently away, but I'll get back to you at my earliest convenience.`;
     const base64EncodedEmail = Buffer.from(emailContent)
       .toString("base64")
       .replace(/\+/g, "-")
@@ -145,4 +147,5 @@
   
   //Setting Interval and calling main function in every interval
   setInterval(checkEmailsAndSendReplies, getRandomInterval(45, 120) * 1000);
+  
   
